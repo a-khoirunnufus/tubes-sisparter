@@ -39,7 +39,7 @@ producer.on('delivery-report', function(err, report) {
 producer.on('ready', function(arg) {
   console.log('producer ready. ' + JSON.stringify(arg));
 
-  var partition = 0;
+  var partition = -1;
   
   const message = {
     task: argv.task,
