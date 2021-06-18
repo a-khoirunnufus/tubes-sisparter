@@ -37,7 +37,7 @@ let task = [];
 
 consumer.on('data', function(m) {
   let recv = taskType.fromBuffer(m.value);
-  // task.push(recv)
+  task.push(recv)
   console.log('Received Task: ', recv);
 
 });
