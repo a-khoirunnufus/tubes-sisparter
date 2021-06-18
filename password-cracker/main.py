@@ -21,12 +21,12 @@ def main():
 			
 			if cleaned_raw_sha1 == converted_sha1:
 				print(f"Password ditemukan: {password}")
-				os.system(f"node ./kafka/producer/sendCompletedTask.js --task password_cracking --client_ip={local_ip} --msg='successfully cracking password' {raw_sha1} {password}")
+				os.system(f"node ./kafka/producer/sendCompletedTask.js --task password_cracking --client_hostname={hostname} --msg='successfully cracking password' {raw_sha1} {password}")
 				return
 
 		# print("Tidak bisa menemukan password")
 		os.system("echo Tidak bisa menemukan password")
-		os.system(f"node ./kafka/producer/sendCompletedTask.js --task password_cracking --client_ip={local_ip} --msg='failed cracking password' {raw_sha1}")
+		os.system(f"node ./kafka/producer/sendCompletedTask.js --task password_cracking --client_hostname={hostname} --msg='failed cracking password' {raw_sha1}")
 
 if __name__ == "__main__":
 	main()

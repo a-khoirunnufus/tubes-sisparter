@@ -43,7 +43,7 @@ producer.on('ready', function(arg) {
   
   const message = {
     task: argv.task,
-    client_ip: argv.client_ip,
+    client_ip: argv.client_hostname,
     payload: argv._,
     message: argv.msg
   };

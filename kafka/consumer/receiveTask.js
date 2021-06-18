@@ -9,7 +9,7 @@ const consumer = new Kafka.KafkaConsumer({
   'sasl.password': 'PTNeOfbEq5eDiLqEdTfezSfrUpaf3K9SwqfczXDrzG+W11/DHlj+y+86pyJHaWqP',
   'security.protocol': 'SASL_SSL',
   'sasl.mechanisms': 'PLAIN',
-  'group.id': 'node-example-group-1',
+  'group.id': 'group-1',
   'enable.auto.commit': true
 });
 
@@ -53,7 +53,7 @@ consumer.connect();
 // stopping this example after 30s
 setTimeout(function() {
   consumer.disconnect();
-}, 20000);
+}, 30000);
 
 setTimeout(function() {
   task.forEach((item) => {
@@ -73,4 +73,4 @@ setTimeout(function() {
       default:
     }
   })
-}, 21000);
+}, 31000);
