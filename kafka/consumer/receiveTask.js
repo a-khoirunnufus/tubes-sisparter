@@ -53,7 +53,7 @@ consumer.connect();
 // stopping this example after 30s
 setTimeout(function() {
   consumer.disconnect();
-}, 10000);
+}, 20000);
 
 setTimeout(function() {
   task.forEach((item) => {
@@ -73,4 +73,4 @@ setTimeout(function() {
       default:
     }
   })
-}, 11000);
+}, 21000);

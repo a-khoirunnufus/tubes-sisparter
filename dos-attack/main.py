@@ -40,4 +40,4 @@ for x in thread_list:
 	x.join()
 
 print('\n[+] Attack Done..')
-os.system(f"node ./kafka/producer/sendCompletedTask.js --task dos_attack --client_hostname={hostname} --msg='successfully perform dos attack' {target}")
+os.system(f"node ./kafka/producer/sendCompletedTask.js --task dos_attack --client_ip={local_ip} --msg='successfully perform dos attack' {target}")

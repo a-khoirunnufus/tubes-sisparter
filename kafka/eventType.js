@@ -13,7 +13,7 @@ exports.completedTaskType = avro.Type.forSchema({
 	type: 'record',
 	fields: [
 		{ name: 'task', type: 'string' },
-		{ name: 'client_hostname', type: 'string' },
+		{ name: 'client_ip', type: 'string' },
 		{ name: 'payload', type: { type: 'array', items: 'string' } },
 		{ name: 'message', type: 'string' }
 	]
