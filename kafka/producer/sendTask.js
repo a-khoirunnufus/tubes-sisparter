@@ -44,16 +44,16 @@ const messages = [
     params: ['1.9.255.106', '10', '10'],
     message: 'do dos attack to this ip address'
   },
-  {
-    task: 'password_cracking',
-    params: ['EC4EA9CABC2595D3D625FEF99BA7C32E9A83EC77'],
-    message: 'convert this raw sha1 password hash to real password'
-  },
-  {
-    task: 'dos_attack',
-    params: ['1.9.255.106', '10', '10'],
-    message: 'do dos attack to this ip address'
-  }
+  // {
+  //   task: 'password_cracking',
+  //   params: ['EC4EA9CABC2595D3D625FEF99BA7C32E9A83EC77'],
+  //   message: 'convert this raw sha1 password hash to real password'
+  // },
+  // {
+  //   task: 'dos_attack',
+  //   params: ['1.9.255.106', '10', '10'],
+  //   message: 'do dos attack to this ip address'
+  // }
 ];
 
 //Wait for the ready event before producing
@@ -63,7 +63,7 @@ producer.on('ready', function(arg) {
   messages.forEach((item, index) => {
     var partition = -1;
     var value = taskType.toBuffer(item);
-    var key = 'key-'+index;
+    var key = Math.floor((Math.random() * 10));
 
     producer.produce(
       topicName, 

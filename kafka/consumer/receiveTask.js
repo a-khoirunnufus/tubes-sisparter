@@ -2,14 +2,13 @@ const Kafka = require('node-rdkafka');
 const { taskType } = require('../eventType.js');
 const { exec } = require("child_process");
 
-
 const consumer = new Kafka.KafkaConsumer({
   'bootstrap.servers': 'pkc-ldvr1.asia-southeast1.gcp.confluent.cloud:9092',
   'sasl.username': 'V75LIXGWK53RNSV4',
   'sasl.password': 'PTNeOfbEq5eDiLqEdTfezSfrUpaf3K9SwqfczXDrzG+W11/DHlj+y+86pyJHaWqP',
   'security.protocol': 'SASL_SSL',
   'sasl.mechanisms': 'PLAIN',
-  'group.id': 'group-1',
+  'group.id': 'node-example-group-1',
   'enable.auto.commit': true
 });
 
@@ -38,7 +37,7 @@ let task = [];
 
 consumer.on('data', function(m) {
   let recv = taskType.fromBuffer(m.value);
-  task.push(recv)
+  // task.push(recv)
   console.log('Received Task: ', recv);
 
 });
