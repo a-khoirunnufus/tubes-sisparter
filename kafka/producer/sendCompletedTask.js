@@ -39,7 +39,7 @@ producer.on('delivery-report', function(err, report) {
 producer.on('ready', function(arg) {
   console.log('producer ready. ' + JSON.stringify(arg));
 
-  var partition = -1;
+  var partition = 0;
   
   const message = {
     task: argv.task,
@@ -51,7 +51,7 @@ producer.on('ready', function(arg) {
   // console.log(message);
 
   var value = completedTaskType.toBuffer(message);
-  var key = 'key-6';
+  var key = 1;
 
   producer.produce(
     topicName, 
